@@ -98,11 +98,12 @@ https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-da
 **The algorithms used in the ensemble operation and the corresponding weights are listed below.**
 
 
-![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%205.JPG)
+![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%205.jpg)
+
 
 ![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%206.JPG)
 
-![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%209.JPG)
+
 
 
 **The image below shows "Precision - Recall" plot. It shows how closely the model tracks the ideal behavior. The closer the curve to the ideal line, the better is the model.** 
