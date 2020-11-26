@@ -46,9 +46,9 @@ https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-da
 
 
  ### Hyperparameter Tuning parameters
-**Hyperparameter tuning method is used to tune the two parameters defined in train.py to achieve the best prediction accuracy- Inverse of Regularization Strength (denoted by C) and Maximum Iterations (denoted by max_iter). The former parameter, “C”, helps to avoid overfitting. The parameter max_iter dictates the maximum number of iterations for the regression model so that the model doesn't run for too long resulting in diminishing returns. These parameters are randomly sampled using the RandomParameterSampling method to understand the impact of the parameters on the output prediction accuracy. **
+**Hyperparameter tuning method is used to tune the two parameters defined in train.py to achieve the best prediction accuracy- Inverse of Regularization Strength (denoted by C) and Maximum Iterations (denoted by max_iter). The former parameter, “C”, helps to avoid overfitting. The parameter max_iter dictates the maximum number of iterations for the regression model so that the model doesn't run for too long resulting in diminishing returns. These parameters are randomly sampled using the RandomParameterSampling method to understand the impact of the parameters on the output prediction accuracy.**
 
-**Specifying an early stopping policy improves computational efficiency by terminating poorly performing runs. BanditPolicy was chosen as the early stopping policy in this project with slack factor and evaluation interval as the parameters. Every run is compared to the Best performing run at the end of the specified evaluation interval and in combination with the slack factor (allowed slack value compared to the best performing model) determines whether the run should be continued or terminated. **
+**Specifying an early stopping policy improves computational efficiency by terminating poorly performing runs. BanditPolicy was chosen as the early stopping policy in this project with slack factor and evaluation interval as the parameters. Every run is compared to the Best performing run at the end of the specified evaluation interval and in combination with the slack factor (allowed slack value compared to the best performing model) determines whether the run should be continued or terminated.**
 
 ## AutoML
 **Unlike the Hypertuning method used earlier, Automated ML method automates the iterative tasks associated with the machine learning models thereby improving efficiency and productivity. Accuracy is used as the primary metric similar to the first method. Number of cross-validations is set to 5, meaning each training uses 4/5th of the data, while the remaining 1/5th of the data is used for validation. The final metric reported out is then the average of the five individual metrics.**
@@ -58,8 +58,8 @@ https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-da
 
 
 ## Pipeline comparison
-### ** Pipeline and accuracy differences between Hyperparameter tuning and Automated ML:
-#### **Hyperparameter Tuning:
+### Pipeline and accuracy differences between Hyperparameter tuning and Automated ML:
+#### Hyperparameter Tuning:
 **As specified in Figure 1, in the Hyperparameter tuning method, the tabular data is split into test/train data using the train.py model and Scikit-learn is used to perform Logistic Regression. This is subsequently called in the Hyperparameter tuning code and the parameters are randomly sampled. The parameters seemed to however have no impact on the final accuracy as all the runs performed using different combinations of parameters yielded the same accuracy of 0.9105265. The best model identified by the hypertuning method (hp_trained_model.pkl) is uploaded to the main Github folder.**
 
 
@@ -79,7 +79,7 @@ https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-da
 
 ![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/HP%208.jpg)
 
-#### **Automated ML:
+#### Automated ML:
 **On the other hand, in the case of Automated ML, cleaned data obtained from the train.py module was split into train and test data within the Automated ML code itself and the data was uploaded to a datastore. The Automated ML method evaluated 45 different runs and chose "VotingEnsemble" as the best performing model with an accuracy of 0.91753. While the difference in accuracy is relatively smaller, Automated ML method definitely showed a higher accuracy than the Hyperparameter tuning method. This could be attributed to the superiority of the Automated ML method in sweeping through a more optimum space to find the best fit. The best model identified by the Automated ML method (automl_best_model.pkl) is uploaded to the main Github folder.**
 
 ![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%201.jpg)
@@ -102,11 +102,8 @@ https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-da
 
 ![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%206.JPG)
 
-![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%207.JPG)
-
-![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%208.JPG)
-
 ![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%209.JPG)
+
 
 **The image below shows "Precision - Recall" plot. It shows how closely the model tracks the ideal behavior. The closer the curve to the ideal line, the better is the model.** 
 
@@ -120,7 +117,7 @@ https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-da
 ![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%2011.JPG)
 
 
-**The following confusion matrix shows that the model has the most "True Positives" predictions (21138), which confirms that the trained mdoel is performing well. "True Negatives" are also higher than "False Negatives". 
+**The following confusion matrix shows that the model has the most "True Positives" predictions (21138), which confirms that the trained mdoel is performing well. "True Negatives" are also higher than "False Negatives".**
 
 
 ![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%2012.JPG)
@@ -131,7 +128,7 @@ https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-da
 
 **In summary comparing the two models, the accuracies are as follows:**
 
-**Hyperparameter Tuning Accuracy | Automated ML Accuracy
+Hyperparameter Tuning Accuracy | Automated ML Accuracy
 ------------ | -------------
 0.91052|0.91753
 
