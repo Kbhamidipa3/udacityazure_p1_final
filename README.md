@@ -43,7 +43,7 @@ https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-da
 
 
 
- ### Hyperparameter Tuning 
+ ### Hyperparameter Tuning parameters
 **Hyperparameter tuning method is used to tune the two parameters defined in train.py to achieve the best prediction accuracy- Inverse of Regularization Strength (denoted by C) and Maximum Iterations (denoted by max_iter). The former parameter, “C”, helps to avoid overfitting. The parameter max_iter dictates the maximum number of iterations for the regression model so that the model doesn't run for too long resulting in diminishing returns. These parameters are randomly sampled using the RandomParameterSampling method to understand the impact of the parameters on the output prediction accuracy. **
 
 **Specifying an early stopping policy improves computational efficiency by terminating poorly performing runs. BanditPolicy was chosen as the early stopping policy in this project with slack factor and evaluation interval as the parameters. Every run is compared to the Best performing run at the end of the specified evaluation interval and in combination with the slack factor (allowed slack value compared to the best performing model) determines whether the run should be continued or terminated. **
@@ -51,10 +51,16 @@ https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-da
 ## AutoML
 **Unlike the Hypertuning method used earlier, Automated ML method automates the iterative tasks associated with the machine learning models thereby improving efficiency and productivity. Accuracy is used as the primary metric similar to the first method. Number of cross-validations is set to 5, meaning each training uses 4/5th of the data, while the remaining 1/5th of the data is used for validation. The final metric reported out is then the average of the five individual metrics.**
 
+### AutoML parameters
+**For train/test splitting, no specific test size is entered for the AutoML case, so a default of 25% test size will be used. "Classification" is selected as the task as the final objective is to predict each potential customer as "y" or "n", which is a classification problem. The other parameter used is "experiment_timeout_minutes", which is set to 30 minutes per project specifications. This metric is important to ensure the model terminates within a reasonable time. Accuracy is used as the primary metric similar to the first method. Number of cross-validations is set to 5, meaning each training uses 4/5th of the data, while the remaining 1/5th of the data is used for validation. The final metric reported out is then the average of the five individual metrics. The cleaned x_train and y_train data from the train.py file is concatenated to make a single trained dataset, uploaded to the cloud and fed to the training_data parameter. Column "y" (the predicted column) is assigned to the label_name parameter.**
+
+
 ## Pipeline comparison
 ### ** Pipeline and accuracy differences between Hyperparameter tuning and Automated ML:
 #### **Hyperparameter Tuning:
 **As specified in Figure 1, in the Hyperparameter tuning method, the tabular data is split into test/train data using the train.py model and Scikit-learn is used to perform Logistic Regression. This is subsequently called in the Hyperparameter tuning code and the parameters are randomly sampled. The parameters seemed to however have no impact on the final accuracy as all the runs performed using different combinations of parameters yielded the same accuracy of 0.9105265.**
+
+*you have retrieve the best run but as per the project requirement, you also need to save the best model which is retrieved from the hyperdrive run, please save the best model retrieved from the best run.
 
 ![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/HP%201.jpg)
 
@@ -83,6 +89,42 @@ https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-da
 
 ![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%205.jpg)
 
+*Good job in providing all the screenshots but do mention about the best model selected from the AutoML and what are the various parameters it has learned.
+
+Run(Experiment: automl-classification,
+Id: AutoML_efb70987-acd3-4ea7-bcc3-5ab5b2370e0c_55,
+Type: None,
+Status: Completed)
+Pipeline(memory=None,
+         steps=[('datatransformer',
+                 DataTransformer(enable_dnn=None, enable_feature_sweeping=None,
+                                 feature_sweeping_config=None,
+                                 feature_sweeping_timeout=None,
+                                 featurization_config=None, force_text_dnn=None,
+                                 is_cross_validation=None,
+                                 is_onnx_compatible=None, logger=None,
+                                 observer=None, task=None, working_dir=None)),
+                ('prefittedsoftvotingclassifier',...
+                                                                                                  fit_intercept=True,
+                                                                                                  l1_ratio=0.3877551020408163,
+                                                                                                  learning_rate='invscaling',
+                                                                                                  loss='log',
+                                                                                                  max_iter=1000,
+                                                                                                  n_jobs=1,
+                                                                                                  penalty='none',
+                                                                                                  power_t=0,
+                                                                                                  random_state=None,
+                                                                                                  tol=0.01))],
+                                                                     verbose=False))],
+                                               flatten_transform=None,
+                                               weights=[0.16666666666666666,
+                                                        0.25,
+                                                        0.08333333333333333,
+                                                        0.08333333333333333,
+                                                        0.16666666666666666,
+                                                        0.08333333333333333,
+                                                        0.16666666666666666]))],
+         verbose=False)
 
 **In summary comparing the two models, the accuracies are as follows:**
 
