@@ -91,6 +91,8 @@ https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-da
 
 *Good job in providing all the screenshots but do mention about the best model selected from the AutoML and what are the various parameters it has learned.
 
+**Best Automated ML Method:
+
 Run(Experiment: automl-classification,
 Id: AutoML_efb70987-acd3-4ea7-bcc3-5ab5b2370e0c_55,
 Type: None,
@@ -125,6 +127,7 @@ Pipeline(memory=None,
                                                         0.08333333333333333,
                                                         0.16666666666666666]))],
          verbose=False)
+         
 
 **In summary comparing the two models, the accuracies are as follows:**
 
