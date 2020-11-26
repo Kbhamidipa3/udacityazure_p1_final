@@ -11,7 +11,7 @@ This project is part of the Udacity Azure ML Nanodegree. In this project, we bui
 ## Scikit-learn Pipeline
 **The high-level Scikit-learn Pipeline is shown in Figure 1:**
 
-![GitHub Logo](/images/Figure_1.png)
+![GitHub Logo](/images/Figure_1.jpg)
 Format: ![Alt Text](url)
 ### train.py module:
 There are several steps involved in setting up and running the trained model, which is done in train.py for the HyperDrive model.
