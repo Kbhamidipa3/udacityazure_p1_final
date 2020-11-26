@@ -1,0 +1,28 @@
+2020/11/26 18:29:53 Attempt 1 of http call to http://10.0.0.6:16384/sendlogstoartifacts/info
+2020/11/26 18:29:53 Attempt 1 of http call to http://10.0.0.6:16384/sendlogstoartifacts/status
+[2020-11-26T18:29:55.092861] Entering context manager injector.
+[context_manager_injector.py] Command line Options: Namespace(inject=['ProjectPythonPath:context_managers.ProjectPythonPath', 'RunHistory:context_managers.RunHistory', 'TrackUserError:context_managers.TrackUserError'], invocation=['train.py', '--datastore-dir', '/mnt/batch/tasks/shared/LS_root/jobs/quick-starts-ws-128009/azureml/hd_0b883dcd-10c7-4fbc-bc6d-d24aa7a95d6d_0/mounts/workspaceblobstore', '--C', '0.5', '--max_iter', '1000'])
+Script type = None
+Starting the daemon thread to refresh tokens in background for process with pid = 108
+Entering Run History Context Manager.
+Current directory:  /mnt/batch/tasks/shared/LS_root/jobs/quick-starts-ws-128009/azureml/hd_0b883dcd-10c7-4fbc-bc6d-d24aa7a95d6d_0/mounts/workspaceblobstore/azureml/HD_0b883dcd-10c7-4fbc-bc6d-d24aa7a95d6d_0
+Preparing to call script [ train.py ] with arguments: ['--datastore-dir', '/mnt/batch/tasks/shared/LS_root/jobs/quick-starts-ws-128009/azureml/hd_0b883dcd-10c7-4fbc-bc6d-d24aa7a95d6d_0/mounts/workspaceblobstore', '--C', '0.5', '--max_iter', '1000']
+After variable expansion, calling script [ train.py ] with arguments: ['--datastore-dir', '/mnt/batch/tasks/shared/LS_root/jobs/quick-starts-ws-128009/azureml/hd_0b883dcd-10c7-4fbc-bc6d-d24aa7a95d6d_0/mounts/workspaceblobstore', '--C', '0.5', '--max_iter', '1000']
+
+Performing interactive authentication. Please follow the instructions on the terminal.
+To sign in, use a web browser to open the page https://microsoft.com/devicelogin and enter the code FGHU9RM9Y to authenticate.
+You have logged in. Now let us find all the subscriptions to which you have access...
+Interactive authentication successfully completed.
+/azureml-envs/azureml_7e589dbdf412230a814a80c0eac4b84f/lib/python3.6/site-packages/sklearn/linear_model/logistic.py:433: FutureWarning: Default solver will be changed to 'lbfgs' in 0.22. Specify a solver to silence this warning.
+  FutureWarning)
+0.910152657715652
+Starting the daemon thread to refresh tokens in background for process with pid = 108
+
+
+[2020-11-26T18:30:57.207302] The experiment completed successfully. Finalizing run...
+Cleaning up all outstanding Run operations, waiting 900.0 seconds
+2 items cleaning up...
+Cleanup took 5.475683689117432 seconds
+[2020-11-26T18:31:03.619300] Finished context manager injector.
+2020/11/26 18:31:09 Attempt 1 of http call to http://10.0.0.6:16384/sendlogstoartifacts/status
+2020/11/26 18:31:09 Process Exiting with Code:  0

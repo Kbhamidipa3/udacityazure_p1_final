@@ -24,9 +24,9 @@ from azureml.core import Workspace, Dataset
 # azureml-dataprep[pandas] of version 1.1.34 or higher is required
 
 
-subscription_id = 'de47103e-2da6-4f5e-88fc-d18b27fd249b'
-resource_group = 'aml-quickstarts-127887'
-workspace_name = 'quick-starts-ws-127887'
+subscription_id = '94e14ad4-bf97-47e8-aae0-f9b85a7befa8'
+resource_group = 'aml-quickstarts-128009'
+workspace_name = 'quick-starts-ws-128009'
 
 workspace = Workspace(subscription_id, resource_group, workspace_name)
 
@@ -98,6 +98,10 @@ def main():
     accuracy = model.score(x_test, y_test)
     run.log("Accuracy", np.float(accuracy))
     print(accuracy)
+
+    # Save the trained model
+    os.makedirs('outputs', exist_ok=True)
+    joblib.dump(value=model, filename='outputs/hp_trained_model.pkl')
 
 if __name__ == '__main__':
     main()
