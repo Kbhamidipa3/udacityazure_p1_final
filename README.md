@@ -86,15 +86,19 @@ https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-da
 
 ![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%202.jpg)
 
-#### **Best Automated ML Method:**
-**As shown below "VotingEnsemble" method is chosen as the best Automated ML method as it had the highest accuracy (0.91753) of all the models. VotingEnsemble method implements soft voting on ensemble of previous Auto ML runs. Soft vote uses average of predicted probabilities.**
+### Best Automated ML Method:
+**As shown below "VotingEnsemble" method is chosen as the best Automated ML method as it had the highest accuracy (0.91753) of all the models. VotingEnsemble method implements soft voting on ensemble of previous Auto ML runs and "Stacking" is the ensemble learning used. Soft vote uses average of predicted probabilities.**
 
 
 ![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%203.jpg)
 
 ![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%204.jpg)
 
-![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%205.jpg)
+
+**The algorithms used in the ensemble operation and the corresponding weights are listed below.**
+
+
+![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%205.JPG)
 
 ![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%206.JPG)
 
@@ -104,20 +108,26 @@ https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-da
 
 ![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%209.JPG)
 
+**The image below shows "Precision - Recall" plot. It shows how closely the model tracks the ideal behavior. The closer the curve to the ideal line, the better is the model.** 
+
+
 ![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%2010.JPG)
+
+
+**Another way to interpret the accuracy of the model is using "Calibration Curve. The datapoints are tracking the ideal line well.** 
+
 
 ![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%2011.JPG)
 
+
+**The following confusion matrix shows that the model has the most "True Positives" predictions (21138), which confirms that the trained mdoel is performing well. "True Negatives" are also higher than "False Negatives". 
+
+
 ![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%2012.JPG)
 
-![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%2013.JPG)
-
-![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%2014.JPG)
-
-![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%2015.JPG)
 
 
-
+## Tabulated Summary of the Models:
 
 **In summary comparing the two models, the accuracies are as follows:**
 
