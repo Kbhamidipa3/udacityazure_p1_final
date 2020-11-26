@@ -80,11 +80,15 @@ https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-da
 ![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/HP%208.jpg)
 
 #### **Automated ML:
-**On the other hand, in the case of Automated ML, cleaned data obtained from the train.py module was split into train and test data within the Automated ML code itself and the data was uploaded to a datastore. The Automated ML method evaluated 45 different runs and chose "VotingEnsemble" as the best performing model with an accuracy of 0.91753. While the difference in accuracy is relatively smaller, Automated ML method definitely showed a higher accuracy than the Hyperparameter tuning method. This could be attributed to the superiority of the Automated ML method in sweeping through a more optimum space to find the best fit. The best model identified by the Automated ML method (automl_best_model.pkl) is uploaded to the main Github folder.****
+**On the other hand, in the case of Automated ML, cleaned data obtained from the train.py module was split into train and test data within the Automated ML code itself and the data was uploaded to a datastore. The Automated ML method evaluated 45 different runs and chose "VotingEnsemble" as the best performing model with an accuracy of 0.91753. While the difference in accuracy is relatively smaller, Automated ML method definitely showed a higher accuracy than the Hyperparameter tuning method. This could be attributed to the superiority of the Automated ML method in sweeping through a more optimum space to find the best fit. The best model identified by the Automated ML method (automl_best_model.pkl) is uploaded to the main Github folder.**
 
 ![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%201.jpg)
 
 ![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%202.jpg)
+
+#### **Best Automated ML Method:**
+**As shown below "VotingEnsemble" method is chosen as the best Automated ML method as it had the highest accuracy (0.91753) of all the models. VotingEnsemble method implements soft voting on ensemble of previous Auto ML runs. Soft vote uses average of predicted probabilities.**
+
 
 ![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%203.jpg)
 
@@ -112,9 +116,6 @@ https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-da
 
 ![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%2015.JPG)
 
-*Good job in providing all the screenshots but do mention about the best model selected from the AutoML and what are the various parameters it has learned.
-
-**Best Automated ML Method:
 
 
 
