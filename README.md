@@ -41,6 +41,8 @@ https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-da
  
 * The accuracy of the model is then determined using the score method.
 
+* The trained model is then saved to the output folder using joblib.dump().
+
 
 
  ### Hyperparameter Tuning parameters
@@ -52,15 +54,14 @@ https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-da
 **Unlike the Hypertuning method used earlier, Automated ML method automates the iterative tasks associated with the machine learning models thereby improving efficiency and productivity. Accuracy is used as the primary metric similar to the first method. Number of cross-validations is set to 5, meaning each training uses 4/5th of the data, while the remaining 1/5th of the data is used for validation. The final metric reported out is then the average of the five individual metrics.**
 
 ### AutoML parameters
-**For train/test splitting, no specific test size is entered for the AutoML case, so a default of 25% test size will be used. "Classification" is selected as the task as the final objective is to predict each potential customer as "y" or "n", which is a classification problem. The other parameter used is "experiment_timeout_minutes", which is set to 30 minutes per project specifications. This metric is important to ensure the model terminates within a reasonable time. Accuracy is used as the primary metric similar to the first method. Number of cross-validations is set to 5, meaning each training uses 4/5th of the data, while the remaining 1/5th of the data is used for validation. The final metric reported out is then the average of the five individual metrics. The cleaned x_train and y_train data from the train.py file is concatenated to make a single trained dataset, uploaded to the cloud and fed to the training_data parameter. Column "y" (the predicted column) is assigned to the label_name parameter.**
+**For train/test splitting, no specific test size is entered for the AutoML case, so a default of 25% test size will be used. As the final objective is to predict each potential customer as "y" or "n", which is a classification problem, task is set as "Classification". The other parameter used is "experiment_timeout_minutes", which is set to 30 minutes per project specifications. This metric is important to ensure the model terminates within a reasonable time. Accuracy is used as the primary metric similar to the first method and the objective is to maximize the accuracy. Number of cross-validations is set to 5, meaning each training uses 4/5th of the data, while the remaining 1/5th of the data is used for validation. The final metric reported out is the average of the five individual metrics. The cleaned x_train and y_train data from the train.py file is concatenated to make a single trained dataset, uploaded to the cloud and fed to the training_data parameter. Column "y" (the predicted column) is assigned to the label_name parameter. Parameters "enable_voting_ensemble" and "enable_stack_ensemble" have not been specified, so the default values are set to "True".**
 
 
 ## Pipeline comparison
 ### ** Pipeline and accuracy differences between Hyperparameter tuning and Automated ML:
 #### **Hyperparameter Tuning:
-**As specified in Figure 1, in the Hyperparameter tuning method, the tabular data is split into test/train data using the train.py model and Scikit-learn is used to perform Logistic Regression. This is subsequently called in the Hyperparameter tuning code and the parameters are randomly sampled. The parameters seemed to however have no impact on the final accuracy as all the runs performed using different combinations of parameters yielded the same accuracy of 0.9105265.**
+**As specified in Figure 1, in the Hyperparameter tuning method, the tabular data is split into test/train data using the train.py model and Scikit-learn is used to perform Logistic Regression. This is subsequently called in the Hyperparameter tuning code and the parameters are randomly sampled. The parameters seemed to however have no impact on the final accuracy as all the runs performed using different combinations of parameters yielded the same accuracy of 0.9105265. The best model identified by the model is uploaded to the main Github folder.**
 
-*you have retrieve the best run but as per the project requirement, you also need to save the best model which is retrieved from the hyperdrive run, please save the best model retrieved from the best run.
 
 ![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/HP%201.jpg)
 
