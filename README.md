@@ -60,7 +60,7 @@ https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-da
 ## Pipeline comparison
 ### ** Pipeline and accuracy differences between Hyperparameter tuning and Automated ML:
 #### **Hyperparameter Tuning:
-**As specified in Figure 1, in the Hyperparameter tuning method, the tabular data is split into test/train data using the train.py model and Scikit-learn is used to perform Logistic Regression. This is subsequently called in the Hyperparameter tuning code and the parameters are randomly sampled. The parameters seemed to however have no impact on the final accuracy as all the runs performed using different combinations of parameters yielded the same accuracy of 0.9105265. The best model identified by the model is uploaded to the main Github folder.**
+**As specified in Figure 1, in the Hyperparameter tuning method, the tabular data is split into test/train data using the train.py model and Scikit-learn is used to perform Logistic Regression. This is subsequently called in the Hyperparameter tuning code and the parameters are randomly sampled. The parameters seemed to however have no impact on the final accuracy as all the runs performed using different combinations of parameters yielded the same accuracy of 0.9105265. The best model identified by the hypertuning method (hp_trained_model.pkl) is uploaded to the main Github folder.**
 
 
 ![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/HP%201.jpg)
@@ -80,7 +80,7 @@ https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-da
 ![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/HP%208.jpg)
 
 #### **Automated ML:
-**On the other hand, in the case of Automated ML, cleaned data obtained from the train.py module was split into train and test data within the Automated ML code itself and the data was uploaded to a datastore. The Automated ML method evaluated 45 different runs and chose "VotingEnsemble" as the best performing model with an accuracy of 0.91753. While the difference in accuracy is relatively smaller, Automated ML method definitely showed a higher accuracy than the Hyperparameter tuning method. This could be attributed to the superiority of the Automated ML method in sweeping through a more optimum space to find the best fit.**
+**On the other hand, in the case of Automated ML, cleaned data obtained from the train.py module was split into train and test data within the Automated ML code itself and the data was uploaded to a datastore. The Automated ML method evaluated 45 different runs and chose "VotingEnsemble" as the best performing model with an accuracy of 0.91753. While the difference in accuracy is relatively smaller, Automated ML method definitely showed a higher accuracy than the Hyperparameter tuning method. This could be attributed to the superiority of the Automated ML method in sweeping through a more optimum space to find the best fit. The best model identified by the Automated ML method (automl_best_model.pkl) is uploaded to the main Github folder.****
 
 ![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%201.jpg)
 
@@ -92,65 +92,31 @@ https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-da
 
 ![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%205.jpg)
 
-![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%206.jpg)
+![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%206.JPG)
 
-![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%207.jpg)
+![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%207.JPG)
 
-![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%208.jpg)
+![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%208.JPG)
 
-![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%209.jpg)
+![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%209.JPG)
 
-![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%2010.jpg)
+![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%2010.JPG)
 
-![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%2011.jpg)
+![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%2011.JPG)
 
-![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%2012.jpg)
+![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%2012.JPG)
 
-![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%2013.jpg)
+![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%2013.JPG)
 
-![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%2014.jpg)
+![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%2014.JPG)
 
-![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%2015.jpg)
+![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%2015.JPG)
 
 *Good job in providing all the screenshots but do mention about the best model selected from the AutoML and what are the various parameters it has learned.
 
 **Best Automated ML Method:
 
-Run(Experiment: automl-classification,
-Id: AutoML_efb70987-acd3-4ea7-bcc3-5ab5b2370e0c_55,
-Type: None,
-Status: Completed)
-Pipeline(memory=None,
-         steps=[('datatransformer',
-                 DataTransformer(enable_dnn=None, enable_feature_sweeping=None,
-                                 feature_sweeping_config=None,
-                                 feature_sweeping_timeout=None,
-                                 featurization_config=None, force_text_dnn=None,
-                                 is_cross_validation=None,
-                                 is_onnx_compatible=None, logger=None,
-                                 observer=None, task=None, working_dir=None)),
-                ('prefittedsoftvotingclassifier',...
-                                                                                                  fit_intercept=True,
-                                                                                                  l1_ratio=0.3877551020408163,
-                                                                                                  learning_rate='invscaling',
-                                                                                                  loss='log',
-                                                                                                  max_iter=1000,
-                                                                                                  n_jobs=1,
-                                                                                                  penalty='none',
-                                                                                                  power_t=0,
-                                                                                                  random_state=None,
-                                                                                                  tol=0.01))],
-                                                                     verbose=False))],
-                                               flatten_transform=None,
-                                               weights=[0.16666666666666666,
-                                                        0.25,
-                                                        0.08333333333333333,
-                                                        0.08333333333333333,
-                                                        0.16666666666666666,
-                                                        0.08333333333333333,
-                                                        0.16666666666666666]))],
-         verbose=False)
-         
+
 
 **In summary comparing the two models, the accuracies are as follows:**
 
