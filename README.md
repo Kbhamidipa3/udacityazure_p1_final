@@ -6,7 +6,7 @@ This project is part of the Udacity Azure ML Nanodegree. In this project, we bui
 ## Summary
 **The bankmarketing_train.csv dataset contains various metrics about potential customers that could eventually be utilizing the services of the bank. The objective of the project is to determine who is likely to end up becoming a customer based on the information available from the database.**
 
-**Both Hyperparameter Tuning with HyperDrive and Automated ML methods were evaluated. While the difference was relatively smaller, the Automated ML method showed the best performance between the two with a “Best Accuracy” of 0.91709.**
+**Both Hyperparameter Tuning with HyperDrive and Automated ML methods were evaluated. While the difference was relatively smaller, the Automated ML method showed the best performance between the two with a “Best Accuracy” of 0.91753.**
 
 ## Scikit-learn Pipeline
 **The high-level Scikit-learn Pipeline used to setup the pipeline is shown in the image below:**
@@ -80,7 +80,7 @@ https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-da
 ![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/HP%208.jpg)
 
 #### **Automated ML:
-**On the other hand, in the case of Automated ML, cleaned data obtained from the train.py module was split into train and test data within the Automated ML code itself and the data was uploaded to a datastore. The Automated ML method evaluated 45 different runs and chose "VotingEnsemble" as the best performing model with an accuracy of 0.9170851. While the difference in accuracy is relatively smaller, Automated ML method definitely showed a higher accuracy than the Hyperparameter tuning method. This could be attributed to the superiority of the Automated ML method in sweeping through a more optimum space to find the best fit.**
+**On the other hand, in the case of Automated ML, cleaned data obtained from the train.py module was split into train and test data within the Automated ML code itself and the data was uploaded to a datastore. The Automated ML method evaluated 45 different runs and chose "VotingEnsemble" as the best performing model with an accuracy of 0.91753. While the difference in accuracy is relatively smaller, Automated ML method definitely showed a higher accuracy than the Hyperparameter tuning method. This could be attributed to the superiority of the Automated ML method in sweeping through a more optimum space to find the best fit.**
 
 ![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%201.jpg)
 
@@ -156,7 +156,7 @@ Pipeline(memory=None,
 
 **Hyperparameter Tuning Accuracy | Automated ML Accuracy
 ------------ | -------------
-0.9105265|0.9170851
+0.91052|0.91753
 
 
 
