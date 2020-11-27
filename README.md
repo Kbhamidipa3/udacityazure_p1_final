@@ -51,15 +51,15 @@ https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-da
 **Specifying an early stopping policy improves computational efficiency by terminating poorly performing runs. BanditPolicy was chosen as the early stopping policy in this project with slack factor and evaluation interval as the parameters. Every run is compared to the Best performing run at the end of the specified evaluation interval and in combination with the slack factor (allowed slack value compared to the best performing model) determines whether the run should be continued or terminated.**
 
 ## AutoML
-**Unlike the Hypertuning method used earlier, Automated ML method automates the iterative tasks associated with the machine learning models thereby improving efficiency and productivity. Accuracy is used as the primary metric similar to the first method. Number of cross-validations is set to 5, meaning each training uses 4/5th of the data, while the remaining 1/5th of the data is used for validation. The final metric reported out is then the average of the five individual metrics.**
+**Unlike the Hypertuning method used earlier, Automated ML method automates the iterative tasks associated with the machine learning models thereby improving efficiency and productivity. Accuracy is used as the primary metric similar to the first method.**
 
 ### AutoML parameters
 **For train/test splitting, no specific test size is entered for the AutoML case, so a default of 25% test size will be used. As the final objective is to predict each potential customer as "y" or "n", which is a classification problem, task is set as "Classification". The other parameter used is "experiment_timeout_minutes", which is set to 30 minutes per project specifications. This metric is important to ensure the model terminates within a reasonable time. Accuracy is used as the primary metric similar to the first method and the objective is to maximize the accuracy. Number of cross-validations is set to 5, meaning each training uses 4/5th of the data, while the remaining 1/5th of the data is used for validation. The final metric reported out is the average of the five individual metrics. The cleaned x_train and y_train data from the train.py file is concatenated to make a single trained dataset, uploaded to the cloud and fed to the training_data parameter. Column "y" (the predicted column) is assigned to the label_name parameter. Parameters "enable_voting_ensemble" and "enable_stack_ensemble" have not been specified, so the default values are set to "True".**
 
 
-## Pipeline comparison
-### Pipeline and accuracy differences between Hyperparameter tuning and Automated ML:
-#### Hyperparameter Tuning:
+### Pipeline comparison
+#### Pipeline and accuracy differences between Hyperparameter tuning and Automated ML:
+##### Hyperparameter Tuning:
 **As specified in Figure 1, in the Hyperparameter tuning method, the tabular data is split into test/train data using the train.py model and Scikit-learn is used to perform Logistic Regression. This is subsequently called in the Hyperparameter tuning code and the parameters are randomly sampled. The parameters seemed to however have no impact on the final accuracy as all the runs performed using different combinations of parameters yielded the same accuracy of 0.9105265. The best model identified by the hypertuning method (hp_trained_model.pkl) is uploaded to the main Github folder.**
 
 
@@ -87,7 +87,7 @@ https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-da
 ![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%202.jpg)
 
 ### Best Automated ML Method:
-**As shown below "VotingEnsemble" method is chosen as the best Automated ML method as it had the highest accuracy (0.91753) of all the models. VotingEnsemble method implements soft voting on ensemble of previous Auto ML runs and "Stacking" is the ensemble learning used. Soft vote uses average of predicted probabilities.**
+**As shown below, "VotingEnsemble" method is chosen as the best Automated ML method as it had the highest accuracy (0.91753) of all the models. VotingEnsemble method implements soft voting on an ensemble of previous Auto ML runs and "Stacking" is the ensemble learning method used. Soft vote uses average of predicted probabilities.**
 
 
 ![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%203.jpg)
@@ -112,13 +112,13 @@ https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-da
 ![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%2010.JPG)
 
 
-**Another way to interpret the accuracy of the model is using "Calibration Curve. The datapoints are tracking the ideal line well.** 
+**Another way to interpret the accuracy of the model is using "Calibration Curve". The datapoints are tracking the ideal line well.** 
 
 
 ![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%2011.JPG)
 
 
-**The following confusion matrix shows that the model has the most "True Positives" predictions (21138), which confirms that the trained mdoel is performing well. "True Negatives" are also higher than "False Negatives".**
+**The following confusion matrix shows that the model has the most "True Positives" predictions (21138), which confirms that the trained model is performing well. "True Negatives" are also higher than "False Negatives".**
 
 
 ![GitHub Logo](https://github.com/Kbhamidipa3/udacityazure_p1_final/blob/main/images/AML%2012.JPG)
